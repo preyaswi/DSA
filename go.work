@@ -11,4 +11,7 @@ use (
 	./linkedList/arraytoLinkedList
 	./linkedList/doublyLinkedList
 	./linkedList/singleLinkedList
+	./strings/PalindromeOrNot
+	./strings/VowelsAndConsonants
+	./strings/reverseString
 )
