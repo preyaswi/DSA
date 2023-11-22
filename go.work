@@ -4,6 +4,9 @@ use (
 	./arrays/removeDuplicates
 	./arrays/removeElement
 	./arrays/searchtarget
+	./binarySearch/SqureRoot
+	./binarySearch/basicSearch
+	./binarySearch/closestIndex
 	./linkedList/AddANodebtwOneNode
 	./linkedList/AddNodeEndandBeginAndDelete
 	./linkedList/OrderAndReverse
