@@ -7,6 +7,9 @@ use (
 	./binarySearch/SqureRoot
 	./binarySearch/basicSearch
 	./binarySearch/closestIndex
+	./linearSearch/basicLinearSearch
+	./linearSearch/multipleoccurence
+	./linearSearch/smallestIndex
 	./linkedList/AddANodebtwOneNode
 	./linkedList/AddNodeEndandBeginAndDelete
 	./linkedList/OrderAndReverse
@@ -14,6 +17,9 @@ use (
 	./linkedList/arraytoLinkedList
 	./linkedList/doublyLinkedList
 	./linkedList/singleLinkedList
+	./recursion/factorial
+	./recursion/fibonacci
+	./recursion/recursivebinary
 	./strings/PalindromeOrNot
 	./strings/VowelsAndConsonants
 	./strings/reverseString
