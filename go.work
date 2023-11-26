@@ -10,6 +10,9 @@ use (
 	./binarySearch/SqureRoot
 	./binarySearch/basicSearch
 	./binarySearch/closestIndex
+	./bubbleSort/ascendingOrder
+	./bubbleSort/sortStruct
+	./duplicate
 	./linearSearch/basicLinearSearch
 	./linearSearch/multipleoccurence
 	./linearSearch/smallestIndex
