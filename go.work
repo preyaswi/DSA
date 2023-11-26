@@ -1,9 +1,12 @@
 go 1.20
 
 use (
+	"./selection sort/findMinimum"
+	"./selection sort/sortByLength"
+	"./selection sort/sortStruct"
 	./arrays/removeDuplicates
 	./arrays/removeElement
-	./arrays/searchtarget
+	./arrays/searchTarget
 	./binarySearch/SqureRoot
 	./binarySearch/basicSearch
 	./binarySearch/closestIndex

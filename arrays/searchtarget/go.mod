@@ -1,3 +1,3 @@
-module search
+module searchinh
 
 go 1.20
