@@ -24,6 +24,7 @@ use (
 	./linkedList/doublyLinkedList
 	./linkedList/singleLinkedList
 	./mergesort
+	./quickSort
 	./recursion/factorial
 	./recursion/fibonacci
 	./recursion/recursivebinary
