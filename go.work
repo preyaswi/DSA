@@ -23,6 +23,7 @@ use (
 	./linkedList/arraytoLinkedList
 	./linkedList/doublyLinkedList
 	./linkedList/singleLinkedList
+	./mergesort
 	./recursion/factorial
 	./recursion/fibonacci
 	./recursion/recursivebinary
