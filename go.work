@@ -5,6 +5,7 @@ use (
 	"./selection sort/sortByLength"
 	"./selection sort/sortStruct"
 	./Stack/evaluatePostFix
+	./Stack/firstOneLastOut
 	./Stack/isValidStringOrNot
 	./arrays/removeDuplicates
 	./arrays/removeElement
@@ -26,6 +27,7 @@ use (
 	./linkedList/doublyLinkedList
 	./linkedList/singleLinkedList
 	./mergesort
+	./quene
 	./quickSort
 	./recursion/factorial
 	./recursion/fibonacci
