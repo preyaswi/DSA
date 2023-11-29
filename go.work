@@ -4,6 +4,8 @@ use (
 	"./selection sort/findMinimum"
 	"./selection sort/sortByLength"
 	"./selection sort/sortStruct"
+	./Stack/evaluatePostFix
+	./Stack/isValidStringOrNot
 	./arrays/removeDuplicates
 	./arrays/removeElement
 	./arrays/searchTarget

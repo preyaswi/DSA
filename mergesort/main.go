@@ -24,7 +24,6 @@ func merge(left, right []int) []int {
 			merged = append(merged, right[j])
 			j++
 		}
-	
 
 	}
 	merged = append(merged, left[i:]...)
