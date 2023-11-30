@@ -4,6 +4,8 @@ use (
 	"./selection sort/findMinimum"
 	"./selection sort/sortByLength"
 	"./selection sort/sortStruct"
+	./HashTable/insertSearchDelete
+	./HashTable/twoSum
 	./Stack/evaluatePostFix
 	./Stack/firstOneLastOut
 	./Stack/isValidStringOrNot
