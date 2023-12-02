@@ -9,6 +9,7 @@ use (
 	./Stack/evaluatePostFix
 	./Stack/firstOneLastOut
 	./Stack/isValidStringOrNot
+	./Stack/removeEvenNo
 	./arrays/removeDuplicates
 	./arrays/removeElement
 	./arrays/searchTarget
