@@ -4,6 +4,7 @@ use (
 	"./selection sort/findMinimum"
 	"./selection sort/sortByLength"
 	"./selection sort/sortStruct"
+	./HashTable/duplicateNoOrNot
 	./HashTable/insertSearchDelete
 	./HashTable/twoSum
 	./Stack/evaluatePostFix
@@ -12,7 +13,7 @@ use (
 	./Stack/removeEvenNo
 	./arrays/removeDuplicates
 	./arrays/removeElement
-	./arrays/searchTarget
+	./arrays/searchtarget
 	./binarySearch/SqureRoot
 	./binarySearch/basicSearch
 	./binarySearch/closestIndex
