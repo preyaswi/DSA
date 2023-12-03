@@ -30,6 +30,7 @@ use (
 	./linkedList/arraytoLinkedList
 	./linkedList/doublyLinkedList
 	./linkedList/singleLinkedList
+	./mergeSortt
 	./mergesort
 	./quene
 	./quickSort
