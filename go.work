@@ -13,13 +13,13 @@ use (
 	./Stack/removeEvenNo
 	./arrays/removeDuplicates
 	./arrays/removeElement
-	./arrays/searchtarget
+	./arrays/searchTarget
 	./binarySearch/SqureRoot
 	./binarySearch/basicSearch
 	./binarySearch/closestIndex
 	./bubbleSort/ascendingOrder
 	./bubbleSort/sortStruct
-	./duplicate
+	./insertionSort
 	./linearSearch/basicLinearSearch
 	./linearSearch/multipleoccurence
 	./linearSearch/smallestIndex
