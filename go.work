@@ -19,7 +19,8 @@ use (
 	./binarySearch/closestIndex
 	./bubbleSort/ascendingOrder
 	./bubbleSort/sortStruct
-	./insertionSort
+	./insertionSort/ArraySorting
+	./insertionSort/LinkedListSorting
 	./linearSearch/basicLinearSearch
 	./linearSearch/multipleoccurence
 	./linearSearch/smallestIndex
