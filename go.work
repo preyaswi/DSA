@@ -33,7 +33,9 @@ use (
 	./linkedList/singleLinkedList
 	./mergeSortt
 	./mergesort
-	./quene
+	./quene/normalQuene
+	./quene/queneToStack
+	./quene/stackToQuene
 	./quickSort
 	./recursion/factorial
 	./recursion/fibonacci
