@@ -2,14 +2,14 @@ package main
 
 import "fmt"
 
-type Quene struct {
+type Queue struct {
 	data []int
 }
 
-func (q *Quene) EnQuene(element int) {
+func (q *Queue) EnQueue(element int) {
 	q.data = append(q.data, element)
 }
-func (q *Quene) DeQuene() int {
+func (q *Queue) DeQueue() int {
 	if len(q.data) == 0 {
 		return 0
 	}
@@ -17,18 +17,18 @@ func (q *Quene) DeQuene() int {
 	q.data = q.data[1:]
 	return element
 }
-func (q *Quene) Display() {
-	fmt.Println("Quene elements:", q.data)
+func (q *Queue) Display() {
+	fmt.Println("Queue elements:", q.data)
 }
 func main() {
-	quene := Quene{}
-	quene.EnQuene(30)
-	quene.EnQuene(23)
-	quene.EnQuene(43)
-	quene.EnQuene(54)
-	quene.EnQuene(3)
-	quene.Display()
-	quene.DeQuene()
-	quene.Display()
+	queue := Queue{}
+	queue.EnQueue(30)
+	queue.EnQueue(23)
+	queue.EnQueue(43)
+	queue.EnQueue(54)
+	queue.EnQueue(3)
+	queue.Display()
+	queue.DeQueue()
+	queue.Display()
 
 }

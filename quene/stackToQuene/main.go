@@ -5,14 +5,14 @@ import "fmt"
 func main() {
 	stack := []int{1, 2, 3, 4, 5, 6, 7}
 	fmt.Println("the stack", stack)
-	quene := StackToQuene(stack)
-	fmt.Println("the quene", quene)
+	queue := StackToQueue(stack)
+	fmt.Println("the quene", queue)
 
 }
-func StackToQuene(stack []int) map[int]int {
-	quene := make(map[int]int)
+func StackToQueue(stack []int) map[int]int {
+	queue := make(map[int]int)
 	for i, v := range stack {
-		quene[len(stack)-i-1] = v
+		queue[len(stack)-i-1] = v
 	}
-	return quene
+	return queue
 }

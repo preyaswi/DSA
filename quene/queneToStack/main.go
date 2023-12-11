@@ -3,14 +3,14 @@ package main
 import "fmt"
 
 func main() {
-	quene := []int{1, 2, 3, 4, 5, 6, 7}
-	fmt.Println("the quene:", quene)
-	stack:=QueneToStack(quene)
+	queue := []int{1, 2, 3, 4, 5, 6, 7}
+	fmt.Println("the quene:", queue)
+	stack:=QueneToStack(queue)
 	fmt.Println("the stack",stack)
 }
-func QueneToStack(quene []int) map[int]int {
+func QueneToStack(queue []int) map[int]int {
 	stack := make(map[int]int)
-	for i, v := range quene {
+	for i, v := range queue {
 		stack[i] = v
 	}
 	return stack
