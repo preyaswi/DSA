@@ -11,6 +11,7 @@ use (
 	./Stack/firstOneLastOut
 	./Stack/isValidStringOrNot
 	./Stack/removeEvenNo
+	./Stack/removeMiddle
 	./arrays/removeDuplicates
 	./arrays/removeElement
 	./arrays/searchTarget
