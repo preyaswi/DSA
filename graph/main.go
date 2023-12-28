@@ -27,8 +27,12 @@ func main() {
 	g.addEdge(2, 4)
 
 	g.print()
-	fmt.Println()
+	fmt.Println("\n BFS :")
 	g.BFS(4)
+	fmt.Println("\n DFS :")
+	g.DFS(4)
+
+
 
 }
 func (g *graph) addVertex(data int) {
@@ -91,6 +95,27 @@ func (g *graph)BFS(key int)  {
 				q.arr=append(q.arr, neighbors.data)
 			}
 		}
-		fmt.Println(" ")
+	}
+}
+
+//DFS traversal
+type stack struct{
+	arr []int
+}
+func (g *graph)DFS(key int)  {
+	stack:=stack{}
+	var isChecked =make(map[int]bool)
+	stack.arr=append(stack.arr, key)
+	isChecked[key]=true
+	for len(stack.arr)>0{
+		vertex:=stack.arr[len(stack.arr)-1]
+		stack.arr=stack.arr[:len(stack.arr)-1]
+		fmt.Print(" ",vertex," ")
+		for _,neighbors:=range g.getVertex(vertex).adjacent{
+			if !isChecked[neighbors.data]{
+				isChecked[neighbors.data]=true
+				stack.arr=append(stack.arr, neighbors.data)
+			}
+		}
 	}
 }
