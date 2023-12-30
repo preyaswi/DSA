@@ -12,7 +12,13 @@ func main() {
 	for _, v := range arr {
 		h.insert(v)
 	}
+	fmt.Print("the array:")
+	h.display()
 	h.build() 
+	fmt.Print("the minheap:")
+	h.display()
+	h.delete()
+	fmt.Print("the minheap now:")
 	h.display()
 }
 
@@ -38,7 +44,7 @@ func (h *minheap) shiftDown(currentIdx int) {
 		leftIdx := leftchild(currentIdx)
 		rightIdx := rightChild(currentIdx)
 
-		if leftIdx <= endIdx {
+		if leftIdx < endIdx {
 			if rightIdx <= endIdx && h.array[leftIdx] < h.array[rightIdx] {
 				idxToSwap = leftIdx
 			} else {
@@ -56,7 +62,16 @@ func (h *minheap) shiftDown(currentIdx int) {
 		}
 	}
 }
-
+func (h *minheap) delete() int{
+	if len(h.array)==0{
+		return -1
+	}
+	minval:=h.array[0]
+	h.array[0]=h.array[len(h.array)-1]
+	h.array=h.array[:len(h.array)-1]
+	h.shiftDown(0)
+	return minval
+}
 func leftchild(i int) int {
 	return (2 * i) + 1
 }
