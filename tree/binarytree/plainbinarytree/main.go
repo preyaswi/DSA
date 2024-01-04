@@ -40,7 +40,6 @@ func inorder(root *Node) {
 }
 func preorder(root *Node) {
 	if root != nil {
-
 		fmt.Println(root.Val)
 		preorder(root.Left)
 		preorder(root.Right)

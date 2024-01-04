@@ -15,7 +15,7 @@ type BinarySearchTree struct {
 }
 
 func main() {
-	bst := &BinarySearchTree{}
+	bst := BinarySearchTree{}
 	bst.root = AddNode(bst.root, 11)
 	bst.root = AddNode(bst.root, 10)
 	bst.root = AddNode(bst.root, 51)
@@ -40,7 +40,7 @@ func main() {
 	fmt.Printf("the closest of %f is %d", target, closestval)
 	fmt.Println()
 	fmt.Println("is bst:", IsBst(bst.root, 10, 111))
-	fmt.Println("is 6 is there:",search(bst.root,6))
+	fmt.Println("is 6 is there:", search(bst.root, 6))
 
 }
 func AddNode(root *Node, val int) *Node {
@@ -84,6 +84,7 @@ func delete(node *Node, val int) *Node {
 	} else if val > node.val {
 		node.right = delete(node.right, val)
 	} else {
+
 		if node.left == nil {
 			return node.right
 		} else if node.right == nil {
@@ -153,15 +154,15 @@ func IsBst(node *Node, min, max int) bool {
 		IsBst(node.right, node.val, max)
 }
 func search(root *Node, data int) bool {
-    if root == nil {
-        return false
-    }
-    if root.val == data {
-        return true
-    }
-    if root.val > data {
-        return search(root.left, data)
-    } else {
-        return search(root.right, data)
-    }
+	if root == nil {
+		return false
+	}
+	if root.val == data {
+		return true
+	}
+	if root.val > data {
+		return search(root.left, data)
+	} else {
+		return search(root.right, data)
+	}
 }

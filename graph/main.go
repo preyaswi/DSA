@@ -50,7 +50,7 @@ func contains(vertex []*vertex, data int) bool {
 }
 func (g *graph) print() {
 	for _, v := range g.vertices {
-		fmt.Print("\n vertex", v.data, ":")
+		fmt.Print("\n vertex ", v.data, ":")
 		for _, v := range v.adjacent {
 			fmt.Print(" ", v.data)
 		}
@@ -77,11 +77,11 @@ func (g *graph) addEdge(from, to int) {
 	toVertex.adjacent = append(toVertex.adjacent, fromVertex)
 }
 //bfs traversal
-type queue struct{
+type queues struct{
 	arr []int
 }
 func (g *graph)BFS(key int)  {
-	q:=queue{}
+	q:=queues{}
 	var isChecked = make(map[int]bool)
 	q.arr=append(q.arr, key)
 	isChecked[key]=true
@@ -95,6 +95,7 @@ func (g *graph)BFS(key int)  {
 				q.arr=append(q.arr, neighbors.data)
 			}
 		}
+		
 	}
 }
 
@@ -118,4 +119,5 @@ func (g *graph)DFS(key int)  {
 			}
 		}
 	}
+	
 }

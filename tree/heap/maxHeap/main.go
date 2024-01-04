@@ -28,6 +28,7 @@ func (h *maxHeap) shiftDown(currentIdx int) {
 		}
 
 		var idxToSwap int
+		
 		rightIdx := rightChild(currentIdx)
 		if rightIdx <= endIdx && h.arr[rightIdx] > h.arr[leftIdx] {
 			idxToSwap = rightIdx

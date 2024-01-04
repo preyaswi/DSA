@@ -1,4 +1,4 @@
-go 1.20
+go 1.21.5
 
 use (
 	"./selection sort/findMinimum"
@@ -14,7 +14,7 @@ use (
 	./Stack/removeMiddle
 	./arrays/removeDuplicates
 	./arrays/removeElement
-	./arrays/searchTarget
+	./arrays/searchtarget
 	./binarySearch/SqureRoot
 	./binarySearch/basicSearch
 	./binarySearch/closestIndex
@@ -34,9 +34,8 @@ use (
 	./linkedList/singleLinkedList
 	./mergeSortt
 	./mergesort
-	./quene/normalQuene
-	./quene/queneToStack
-	./quene/stackToQuene
+	./queue/queueArray
+	./queue/queueLinkedlist
 	./quickSort
 	./recursion/factorial
 	./recursion/fibonacci
@@ -44,5 +43,10 @@ use (
 	./strings/PalindromeOrNot
 	./strings/VowelsAndConsonants
 	./strings/reverseString
+	./tree/binarytree/binarySearchTree
 	./tree/binarytree/plainbinarytree
+	./graph
+	./tree/heap/maxHeap
+	./tree/heap/minHeap
+	./tree/trie
 )
