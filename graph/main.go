@@ -1,123 +1,133 @@
 package main
 
-import (
-	"fmt"
-)
+import "fmt"
 
-type graph struct {
-	vertices []*vertex
-}
 type vertex struct {
-	data     int
+	val      int
 	adjacent []*vertex
 }
-
-func main() {
-	g := graph{}
-	g.addVertex(1)
-	g.addVertex(2)
-	g.addVertex(3)
-	g.addVertex(4)
-	g.addVertex(5)
-
-	g.addEdge(1, 2)
-	g.addEdge(1, 3)
-	g.addEdge(1, 4)
-	g.addEdge(5, 3)
-	g.addEdge(2, 4)
-
-	g.print()
-	fmt.Println("\n BFS :")
-	g.BFS(4)
-	fmt.Println("\n DFS :")
-	g.DFS(4)
-
-
-
+type graph struct {
+	vetices []*vertex
 }
-func (g *graph) addVertex(data int) {
-	if !contains(g.vertices, data) {
-		g.vertices = append(g.vertices, &vertex{data: data})
+
+func (g *graph) addvertex(val int) {
+	if !contains(g.vetices, val) {
+		g.vetices = append(g.vetices, &vertex{val: val})
 	}
 }
-func contains(vertex []*vertex, data int) bool {
+func contains(vertex []*vertex, val int) bool {
 	for _, v := range vertex {
-		if v.data == data {
+		if v.val == val {
+
 			return true
 		}
 	}
 	return false
 }
-func (g *graph) print() {
-	for _, v := range g.vertices {
-		fmt.Print("\n vertex ", v.data, ":")
-		for _, v := range v.adjacent {
-			fmt.Print(" ", v.data)
-		}
-
+func (g *graph) addedges(from, to int) {
+	fromvertex := getvetex(g.vetices, from)
+	tovertex := getvetex(g.vetices, to)
+	if fromvertex == nil || tovertex == nil {
+		fmt.Println("vertex not found")
+		return
 	}
+	fromvertex.adjacent = append(fromvertex.adjacent, tovertex)
+	tovertex.adjacent = append(tovertex.adjacent, fromvertex)
 }
-func (g *graph) getVertex(data int) *vertex {
-	for _, v := range g.vertices {
-		if v.data == data {
+func getvetex(vertex []*vertex, val int) *vertex {
+	for _, v := range vertex {
+		if v.val == val {
+
 			return v
 		}
 	}
 	return nil
 }
-func (g *graph) addEdge(from, to int) {
-	fromVertex := g.getVertex(from)
-	toVertex := g.getVertex(to)
-	if fromVertex == nil || toVertex == nil {
-		fmt.Println("Error: Vertex not found.")
+func (g *graph) display() {
+	for _, v := range g.vetices {
+		fmt.Print("the vertex ", v.val, ":")
+		for _, neighbor := range v.adjacent {
+			fmt.Print(" ", neighbor.val, " ")
+		}
+		fmt.Println()
+	}
+}
+
+// bfs traversal
+type queue struct {
+	arr []*vertex
+}
+
+func (g *graph) bfs(key int) {
+	q := &queue{}
+	ischecked := make(map[int]bool)
+	stavertex := getvetex(g.vetices, key)
+	if stavertex == nil {
+		fmt.Println("vertex not found")
 		return
 	}
-
-	fromVertex.adjacent = append(fromVertex.adjacent, toVertex)
-	toVertex.adjacent = append(toVertex.adjacent, fromVertex)
-}
-//bfs traversal
-type queues struct{
-	arr []int
-}
-func (g *graph)BFS(key int)  {
-	q:=queues{}
-	var isChecked = make(map[int]bool)
-	q.arr=append(q.arr, key)
-	isChecked[key]=true
-	for len(q.arr)!=0{
-		vertex:=q.arr[0]
+	ischecked[stavertex.val] = true
+	q.arr = append(q.arr, stavertex)
+	for len(q.arr) != 0 {
+		vertex := q.arr[0]
 		q.arr=q.arr[1:]
-		fmt.Print(" ",vertex," ")
-		for _,neighbors:=range g.getVertex(vertex).adjacent{
-			if !isChecked[neighbors.data]{
-				isChecked[neighbors.data]=true
-				q.arr=append(q.arr, neighbors.data)
+		fmt.Print(vertex.val, " ")
+		for _, neighbors := range vertex.adjacent {
+			if !ischecked[neighbors.val] {
+				ischecked[neighbors.val] = true
+				q.arr = append(q.arr, neighbors)
 			}
 		}
-		
 	}
+	fmt.Println()
+
+}
+//dfs traversal
+type stack struct{
+	arr []*vertex
+}
+func (g *graph)dfs(key int)  {
+	s:=stack{}
+	ischecked:=make(map[int]bool)
+	startvertex:=getvetex(g.vetices,key)
+	if startvertex==nil{
+		fmt.Println("vertex not found")
+	}
+	ischecked[key]=true
+	s.arr=append(s.arr, startvertex)
+	for len(s.arr)>0{
+		vertex:=s.arr[len(s.arr)-1]
+		s.arr=s.arr[:len(s.arr)-1]
+		fmt.Print(" ",vertex.val," ")
+		for _,neighbor:=range vertex.adjacent{
+			if !ischecked[neighbor.val]{
+				ischecked[neighbor.val]=true
+				s.arr=append(s.arr, neighbor)
+			}
+		}
+	}
+	fmt.Println()
 }
 
-//DFS traversal
-type stack struct{
-	arr []int
-}
-func (g *graph)DFS(key int)  {
-	stack:=stack{}
-	var isChecked =make(map[int]bool)
-	stack.arr=append(stack.arr, key)
-	isChecked[key]=true
-	for len(stack.arr)>0{
-		vertex:=stack.arr[len(stack.arr)-1]
-		stack.arr=stack.arr[:len(stack.arr)-1]
-		fmt.Print(" ",vertex," ")
-		for _,neighbors:=range g.getVertex(vertex).adjacent{
-			if !isChecked[neighbors.data]{
-				isChecked[neighbors.data]=true
-				stack.arr=append(stack.arr, neighbors.data)
-			}
-		}
-	}
-	
+func main() {
+	g := &graph{}
+	g.addvertex(1)
+	g.addvertex(2)
+	g.addvertex(3)
+	g.addvertex(4)
+	g.addvertex(5)
+	g.addvertex(6)
+
+	g.addedges(1, 3)
+	g.addedges(1, 2)
+	g.addedges(1, 5)
+	g.addedges(2, 3)
+	g.addedges(5, 3)
+	g.addedges(6, 2)
+	g.addedges(4, 6)
+	g.display()
+	fmt.Println("bfs")
+	g.bfs(1)
+	fmt.Println("dfs")
+	g.dfs(1)
 }
